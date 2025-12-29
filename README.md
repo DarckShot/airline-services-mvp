@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# Airline Services MVP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MVP-приложение для выбора дополнительных услуг для авиапассажиров.
 
-Currently, two official plugins are available:
+## Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** + **TypeScript**
+- **Vite** - сборка и dev-сервер
+- **CSS Modules** - изолированные стили компонентов
+- **localStorage** - персистентность корзины
 
-## React Compiler
+## Возможности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Выбор дополнительных услуг (багаж, места, питание и т.д.)
+- Добавление услуг в корзину с подсчётом количества
+- Удаление услуг из корзины
+- Автоматический подсчёт общей стоимости
+- Сохранение корзины между сеансами (localStorage)
+- Адаптивный дизайн (mobile-first)
+- Мемоизация компонентов для оптимизации производительности
 
-## Expanding the ESLint configuration
+## Установка и запуск
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Установка зависимостей
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Запуск dev-сервера
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Сборка для production
+npm run build
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Предварительный просмотр production-сборки
+npm run preview
+
+# Линтинг
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Структура проекта
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/        # React компоненты
+│   ├── Header/
+│   ├── ServiceList/
+│   ├── ServiceCard/
+│   ├── OrderSummary/
+│   └── SelectedServiceItem/
+├── hooks/            # Кастомные хуки
+│   └── useSelectedServices.ts
+├── utils/            # Утилиты и хелперы
+│   ├── format.ts
+│   └── orderSummaryText.ts
+├── types/            # TypeScript типы
+├── data/             # Моковые данные
+└── styles/           # Глобальные стили
+```
+
+## Особенности архитектуры
+
+- **CSS Modules** для изоляции стилей
+- **Custom hooks** для переиспользуемой логики
+- **React.memo** для оптимизации рендеринга
+- **TypeScript** для типобезопасности
+- **Mobile-first** адаптивный дизайн
+
+## 🔧 Технические детали
+
+### Хранение данных
+
+Корзина автоматически сохраняется в `localStorage` с ключом `airline-services-cart`. При загрузке страницы данные валидируются и восстанавливаются.
+
+### Оптимизация
+
+- Все компоненты обёрнуты в `React.memo`
+- Колбэки мемоизированы через `useCallback`
+- Вычисления через `useMemo`
+- Списки рендерятся с правильными `key`
+
+## Лицензия
+
+MIT

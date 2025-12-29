@@ -1,0 +1,48 @@
+.servicesSection {
+  flex: 1;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Tablet styles - 640px and up */
+@media (min-width: 640px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Desktop styles - 1024px and up */
+@media (min-width: 1024px) {
+  .servicesSection {
+    flex: 1;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Large desktop - 1280px and up */
+@media (min-width: 1280px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,80 @@
+.serviceItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem;
+  background: var(--background);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.serviceItem:hover {
+  border-color: var(--primary-color);
+  background: #f0f7ff;
+}
+
+.serviceInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.serviceName {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  display: block;
+  word-wrap: break-word;
+  font-weight: 500;
+}
+
+.iconSmall {
+  margin-right: 0.5rem;
+}
+
+.quantity {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-left: 0.5rem;
+  font-weight: 600;
+}
+
+.serviceActions {
+  height: max-content;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.servicePrice {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.removeButton {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--danger-color);
+  color: white;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.removeButton:hover {
+  background-color: var(--danger-hover);
+  transform: scale(1.1);
+}
+
+.removeButton:active {
+  transform: scale(0.95);
+}

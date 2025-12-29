@@ -9,4 +9,3 @@ export interface Service {
 export interface SelectedService extends Service {
   quantity: number;
 }
-

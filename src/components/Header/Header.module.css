@@ -1,0 +1,44 @@
+.header {
+  background: var(--primary-color);
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+/* Desktop styles - 1024px and up */
+@media (min-width: 1024px) {
+  .header {
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Tablet styles - 640px and up */
+@media (min-width: 640px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+  }
+}
