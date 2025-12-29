@@ -13,7 +13,6 @@ export interface UseSelectedServicesResult {
 
 const STORAGE_KEY = STORAGE_KEYS.CART;
 
-// Безопасное чтение из localStorage
 function getStoredServices(): SelectedService[] {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
@@ -22,7 +21,6 @@ function getStoredServices(): SelectedService[] {
     const parsed = JSON.parse(stored);
     if (!Array.isArray(parsed)) return [];
 
-    // Валидация структуры данных
     return parsed.filter(
       (item): item is SelectedService =>
         item &&
@@ -39,7 +37,6 @@ function getStoredServices(): SelectedService[] {
   }
 }
 
-// Безопасная запись в localStorage
 function saveToStorage(services: SelectedService[]): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(services));
