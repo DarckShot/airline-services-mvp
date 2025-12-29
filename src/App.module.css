@@ -1,0 +1,137 @@
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+.main {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.servicesSection {
+  flex: 1;
+}
+
+.sectionTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Tablet styles - 640px and up */
+@media (min-width: 640px) {
+  .title {
+      font-size: 2rem;
+  }
+
+  .subtitle {
+      font-size: 1.05rem;
+  }
+
+  .main {
+      padding: 1.5rem;
+  }
+
+  .servicesGrid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+  }
+}
+
+/* Desktop styles - 1024px and up */
+@media (min-width: 1024px) {
+  .header {
+      padding: 2rem 1.5rem;
+  }
+
+  .title {
+      font-size: 2.5rem;
+  }
+
+  .subtitle {
+      font-size: 1.125rem;
+  }
+
+  .main {
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 2rem;
+      gap: 2rem;
+  }
+
+  .servicesSection {
+      flex: 1;
+  }
+
+  .sectionTitle {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+  }
+
+  .servicesGrid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+  }
+
+  .summarySection {
+      padding-top: calc(1.5rem + 16px);
+      width: 400px;
+      flex-shrink: 1;
+  }
+}
+
+/* Large desktop - 1280px and up */
+@media (min-width: 1280px) {
+  .servicesGrid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .summarySection {
+      width: 420px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
