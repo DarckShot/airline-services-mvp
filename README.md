@@ -2,6 +2,19 @@
 
 MVP-приложение для выбора дополнительных услуг для авиапассажиров.
 
+## Live Demo
+
+**[Открыть приложение](https://darckshot.github.io/airline-services-mvp/)**
+
+Приложение развернуто на GitHub Pages.
+
+## Технологии
+
+- **React 19** + **TypeScript**
+- **Vite** — сборка и dev-сервер
+- **CSS Modules** — изолированные стили компонентов
+- **localStorage** — персистентность корзины
+
 ## Технологии
 
 - **React 19** + **TypeScript**
